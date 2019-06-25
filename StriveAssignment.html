@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+<body onload="welcome()">
+    <!-- EXERCISE 1 . Write a function to change the Title of the page in something else  -->
+    <button onclick="changeTitle()" > ex-1. Change title </button>
+    <script> 
+    function changeTitle(){
+    document.title = " New title ";
+   }
+    </script>
+    
+    <!-- /* EXERCISE 2. Write a function to change the class of the title of the page in "myHeading" -->
+    <p class="p2" title="p2"></p>
+    <button onclick="changeClassTitle()" > ex-2. Change class title</button>
+    <script> 
+    
+ 
+   function changeClassTitle(){
+    document.getElementsByClassName("p2")[0].title="new p1";
+   }
+    </script>
+
+    <!-- EXERCISE 3  Write a function to change the text of only the p which are child of a div -->
+    <div class="div1">
+        <p class="p3" title="p3"> Old Text!!</p>   
+    <button onclick="changeTextP()" > ex-3. Change the text of "P"</button>
+    </div>
+    <script> 
+    function changeTextP(){
+    document.getElementsByClassName("p3")[0].innerHTML="New Text!!";
+   }
+
+    
+      </script>
+
+    <!-- EXERCISE 4  Write a function to change the destination of every link to https://www.google.com -->
+
+    <p><a id="p4" href="http://www.microsoft.com" target="_blank">www.microsoft.com</a></p>
+
+    <h5>Click the button to change the value of the href attribute of the link above to "www.google.com".</h5>
+
+    <button onclick="changeDestination()">ex-4. change destination of link</button>
+
+     <p id="demo"></p>
+     <script> 
+     function changeDestination() {
+  document.getElementById("p4").href = "http://www.google.com/";
+  document.getElementById("demo").innerHTML = "The link above now goes to www.google.com.";
+  }
+    
+      </script>
+
+     <!-- EXERCISE 5  Write a function to add a new item ONLY to the second list -->
+
+     <ul id="myList1"> <h3>List1</h3>
+      <li>1st</li>
+      <li>2nd</li>
+      <li>3rd</li>
+     </ul>
+     <ul id="myList2"> <h3>List2</h3>
+      <li>1st</li>
+      <li>2nd</li>
+      <li>3rd</li>
+      </ul>
+      <h5>Click the button to append an item to the end of the list.</h5>
+
+      <button onclick="addItem()"> ex-5. add Item to the List</button>
+
+      <script> 
+       function addItem() {
+  var node = document.createElement("LI");
+
+  var textnode = document.createTextNode("New Item");
+  node.appendChild(textnode);
+  document.querySelector("#myList2").appendChild(node);
+  }
+    
+        </script>
+
+      <!-- EXERCISE 6  Write a function to add a second paragraph to the div -->
+       <div class="d6">
+         <p class="p6"> This is first paragraph </p>
+       </div>
+       <h5>Click the button to add a second paragraph to the div.</h5>
+       <button onclick="addParagraph()"> ex-6. add paragraph to the div</button>
+
+       <script> 
+     function addParagraph() {
+  var node = document.createElement("p");
+  var textnode = document.createTextNode("This is Second Paragraph");
+  node.appendChild(textnode);
+  document.getElementsByClassName("d6")[0].appendChild(node);
+  }
+        </script>
+
+       <!-- EXERCISE 7  Write a function to make the first UL disappear -->
+       <div id="div7">
+         <ul> <h3>List1</h3>
+          <li>1st</li>
+          <li>2nd</li>
+          <li>3rd</li>
+       </ul> 
+        <ul > <h3>List2</h3>
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+      </ul> 
+    </div>
+      <h5>Click the button to to make the first UL disappear.</h5>
+
+      <button onclick="disappearUl()"> ex-7. disappear the first "ul"</button>
+
+      <script>
+       function disappearUl(){
+    var Ulist = document.querySelector("#div7");
+        Ulist.removeChild(Ulist.childNodes[1]);
+  } 
+    
+        </script>
+
+      <!-- EXERCISE 8  Write a function to make the background of every UL green -->
+
+      <div id="div8">
+          <ul class="ul8">
+           <li>1st</li>
+           <li>2nd</li>
+           <li>3rd</li>
+        </ul> 
+         <ul class="ul8"> 
+             <li>1st</li>
+             <li>2nd</li>
+             <li>3rd</li>
+       </ul> 
+     </div>
+       <h5> Click the button to to make the background of every UL green.</h5>
+ 
+       <button onclick="greenUL()"> ex-8. make green of every ul</button>
+
+       <script> 
+    function greenUL(){
+     document.querySelectorAll(".ul8").style.backgroundColor = "#333";
+        
+  }
+
+        </script>
+
+       <!-- EXERCISE 9  Make the heading of the page changing color every time the user clicks on it -->
+       <h1> Heading Color is Changinng</h1>
+       <h5> Click the button to change the heading clor</h5>
+       <button onclick="changeColor()"> ex-9. change the heading clor</button>
+
+       <script> 
+         function changeColor(){
+  document.querySelector("h1").style.color =  '#' + parseInt(Math.random() * 0xfff).toString(16)
+  }
+        </script>
+
+       <!-- EXERCISE 10  Create a new welcome alert message when the page successfully loads -->
+
+       <script> 
+     function welcome(){
+    alert("Welcome to mypage!");
+    }
+        </script>
+       
+       
+  <script>
+
+
+  </script>
+
+
+</body>
+
+</html>
